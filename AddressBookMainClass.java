@@ -25,7 +25,7 @@ public class AddressBookMainClass {
 
 
                 case 2:
-                    System.out.println("Enter details to update ");
+                    System.out.println("Enter details to update contact ");
                     long key= Scan.nextLong();
                     contactPerson=adressBookOperation.newAddressBook();
                     adressBookOperation.updateValue(key,contactPerson);
