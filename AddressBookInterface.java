@@ -1,14 +1,16 @@
+
 import java.util.HashMap;
-
 public interface AddressBookInterface {
-    public AddressBookContactDetails newAddressBook();
 
+    AddressBookContactDetails newAddressBook();
 
+     void printAllDetails();
 
-    public <AddressBook> HashMap<Long, AddressBookContactDetails> updateValue(long key ,AddressBookContactDetails AddressBook);
+     HashMap<Long, AddressBookContactDetails> updateValue(long key, AddressBookContactDetails AddressBook);
 
-    public void deleteAddress(long key);
+     void deleteAddress(long key);
+     void sortByfirstName();
+
 
 
 }
-
