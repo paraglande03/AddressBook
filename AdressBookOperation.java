@@ -88,4 +88,56 @@ import java.util.*;
               System.out.println(valueList);
           }
       }
+
+      @Override
+      public void sortByZipCode() {
+
+          List<AddressBookContactDetails> value = new ArrayList<>();
+          if (addressBookContainer != null) {
+              value.addAll(addressBookContainer.values());
+
+              Collections.sort(value, new Comparator<AddressBookContactDetails>() {
+                  public int compare(AddressBookContactDetails Person1, AddressBookContactDetails Person2) {
+                      return Person1.getZip() - Person2.getZip();
+                  }
+              });
+          }
+          for (AddressBookContactDetails sortedValue : value) {
+              System.out.println(sortedValue);
+          }
+      }
+
+      public void searchByCity(String icity, AddressBookContactDetails addressBook) {
+
+          Set keys = addressBookContainer.keySet();
+          Iterator iterate = keys.iterator();
+          Collection<AddressBookContactDetails> getValues = addressBookContainer.values();
+          iterate = getValues.iterator();
+          while (iterate.hasNext()) {
+              System.out.println(addressBook.getCity() + "  " + icity);
+              if (addressBook.getCity().equals(icity)) {
+                  System.out.println("Details are : " + addressBook.getfirstName() + "  " + addressBook.getlastName() + "  " + addressBook.getState() + "  " + addressBook.getPhone() + " " + addressBook.getZip());
+              }
+              iterate.hasNext();
+              break;
+          }
+
+      }
+
+      public void searchByState(String inputState, AddressBookContactDetails addressBook) {
+
+          Set keys = addressBookContainer.keySet();
+          Iterator iterate = keys.iterator();
+          Collection<AddressBookContactDetails> getValues = addressBookContainer.values();
+          iterate = getValues.iterator();
+          while (iterate.hasNext()) {
+              System.out.println(addressBook.getState() + "  " + inputState);
+              if (addressBook.getState().equals(inputState)) {
+                  System.out.println("Details are : " + addressBook.getfirstName() + "  " + addressBook.getlastName() + "  " + addressBook.getPhone() + "  " + addressBook.getCity() + "  " + addressBook.getZip());
+
+              }
+              iterate.hasNext();
+              break;
+          }
+      }
   }

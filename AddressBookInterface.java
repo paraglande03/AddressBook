@@ -10,6 +10,11 @@ public interface AddressBookInterface {
 
      void deleteAddress(long key);
      void sortByfirstName();
+    public void sortByZipCode();
+
+    public void searchByCity(String city, AddressBookContactDetails addressBook);
+
+    public void searchByState(String inputState, AddressBookContactDetails addressBook);
 
 
 

@@ -62,6 +62,19 @@ public class AddressBookMainClass {
                 case 5:
                     addressBookOperation.sortByfirstName();
                     break;
+                case 6:
+                    addressBookOperation.sortByZipCode();
+                    break;
+                case 7:
+                    System.out.println("enter the City to Search");
+                    String inputcity = scan.next();
+                    addressBookOperation.searchByCity(inputcity,contactPerson);
+                    break;
+                case 8:
+                    System.out.println("enter the State to Search");
+                    String inputState = scan.next();
+                    addressBookOperation.searchByState(inputState,contactPerson);
+                    break;
 
                 default:
                     System.out.println("Please select valid option");
